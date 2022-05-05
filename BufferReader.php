@@ -1,7 +1,5 @@
 <?php
 
-namespace TeyvatPS\utils;
-
 final class BufferReader{
 
     public static function new(string $buffer): self{
