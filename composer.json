@@ -8,7 +8,7 @@
             "name": "labalityowo"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {"labalityowo\\Bytebuffer\\": "src/"}
     },
