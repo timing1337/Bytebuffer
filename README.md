@@ -4,7 +4,7 @@ A simple ByteBuffer implementation for PHP (Node.js inspired)
 
 ## Installation
 
-```composer require labalityowo/bytebuffer```
+```composer require labalityowo/bytebuffer:dev-stable```
 
 ## Why?
 I made this while coding a genshin impact **private** server. Therefore the top priority isn't performance, create a pull request if you have any changes that may increase the code performance.
