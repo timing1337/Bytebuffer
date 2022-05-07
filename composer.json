@@ -1,0 +1,16 @@
+{
+    "name": "labalityowo/bytebuffer",
+    "description": "A simple ByteBuffer implementation for PHP (Node.js inspired)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "labalityowo"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"labalityowo\\Bytebuffer\\": "src/"}
+    },
+    "require": {}
+}
