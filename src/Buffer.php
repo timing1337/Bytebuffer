@@ -96,7 +96,7 @@ final class Buffer
         return unpack('v', $this->buffer, $offset)[1];
     }
 
-    public function readInt32BE(int $offset = 0): int
+    public function readUInt32BE(int $offset = 0): int
     {
         return unpack('N', $this->buffer, $offset)[1];
     }
