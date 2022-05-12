@@ -86,7 +86,6 @@ final class Buffer
         $this->length = strlen($this->buffer);
     }
 
-
     public function readUInt8(int $offset = 0): int
     {
         return unpack('C', $this->buffer, $offset)[1];
