@@ -5,11 +5,12 @@ namespace labalityowo\Bytebuffer;
 final class Buffer
 {
 
-    public static function concat(array $list, int $totalLength = null): self{
-        if($totalLength === null){
+    public static function concat(array $list, int $totalLength = null): self
+    {
+        if ($totalLength === null) {
             $totalLength = 0;
-            foreach($list as $item){
-                if(!$item instanceof self){
+            foreach ($list as $item) {
+                if (!$item instanceof self) {
                     throw new \Exception('Invalid item in buffer list');
                 }
                 $totalLength += $item->getLength();
@@ -17,8 +18,8 @@ final class Buffer
         }
         $buffer = self::allocate($totalLength);
         $offset = 0;
-        foreach($list as $item){
-            if(!$item instanceof self){
+        foreach ($list as $item) {
+            if (!$item instanceof self) {
                 throw new \Exception('Invalid item in buffer list');
             }
             $buffer = $item->copy($buffer, $offset);
@@ -91,6 +92,11 @@ final class Buffer
         return unpack('C', $this->buffer, $offset)[1];
     }
 
+    public function readUInt16BE(int $offset = 0): int
+    {
+        return unpack('n', $this->buffer, $offset)[1];
+    }
+
     public function readUInt16LE(int $offset = 0): int
     {
         return unpack('v', $this->buffer, $offset)[1];
@@ -109,6 +115,11 @@ final class Buffer
     public function writeUInt8(int $value, int $offset = 0): void
     {
         $this->write(pack('C', $value), $offset);
+    }
+
+    public function writeUInt16BE(int $value, int $offset = 0): void
+    {
+        $this->write(pack('n', $value), $offset);
     }
 
     public function writeUInt16LE(int $value, int $offset = 0): void
