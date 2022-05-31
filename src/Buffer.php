@@ -43,6 +43,17 @@ final class Buffer
     {
         return new self(pack("x{$capacity}"), $capacity);
     }
+    
+    public function chunks(int $length): array
+    {
+        $chunks = [];
+        $offset = 0;
+        while ($offset < $this->length) {
+            $chunks[] = $this->slice($offset, $length + $offset);
+            $offset += $length;
+        }
+        return $chunks;
+    }
 
     public function toString(): string
     {
